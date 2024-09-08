@@ -142,4 +142,4 @@ This application integrates MetaMask to manage user accounts and interact with t
 
 ## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License. 
