@@ -2,6 +2,16 @@
 
 A decentralized Twitter-like application built on Ethereum's Linea Sepolia test network using Solidity and Web3.js. This project allows users to post tweets, like/unlike tweets, and view their tweet history. The smart contract handles all the core functionalities such as creating tweets, liking/unliking them, and maintaining user interactions in a decentralized manner.
 
+## Screenshots
+
+### Frontend
+
+![Frontend Screenshot](./public/Twiiter_forntend.png)
+
+### MetaMask Transaction
+
+![MetaMask Transaction](./public/Metamask.png)
+
 ## Table of Contents
 
 - [Overview](#overview)
@@ -129,16 +139,6 @@ This application integrates MetaMask to manage user accounts and interact with t
 1. After initiating a tweet creation or liking process, MetaMask will automatically pop up, asking you to confirm the transaction.
 2. Once you confirm, the transaction will be sent to the blockchain for processing.
 3. You will be notified when the transaction is successfully mined, and the updated data will reflect on the frontend.
-
-## Screenshots
-
-### Frontend
-
-![Frontend Screenshot](./public/Twiiter_forntend.png)
-
-### MetaMask Transaction
-
-![MetaMask Transaction](./public/Metamask.png)
 
 ## License
 
