@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Twitter DApp README</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 4px;
+      font-family: monospace;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      overflow-x: auto;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    .section {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Twitter DApp</h1>
+
+  <p>A decentralized Twitter-like application built on Ethereum's Linea Sepolia test network using Solidity and Web3.js. This project allows users to post tweets, like/unlike tweets, and view their tweet history. The smart contract handles all the core functionalities such as creating tweets, liking/unliking them, and maintaining user interactions in a decentralized manner.</p>
+
+  <div class="section">
+    <h2>Table of Contents</h2>
+    <ul>
+      <li><a href="#overview">Overview</a></li>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#tech-stack">Tech Stack</a></li>
+      <li><a href="#smart-contract">Smart Contract</a></li>
+      <li><a href="#setup-instructions">Setup Instructions</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#metamask-integration">MetaMask Integration</a></li>
+      <li><a href="#screenshots">Screenshots</a></li>
+      <li><a href="#license">License</a></li>
+    </ul>
+  </div>
+
+  <div class="section" id="overview">
+    <h2>Overview</h2>
+    <p>This DApp is designed to mimic basic Twitter functionality in a decentralized fashion. Users can:</p>
+    <ul>
+      <li>Create a tweet (limited to 280 characters).</li>
+      <li>View all their tweets.</li>
+      <li>Like and unlike tweets of any user.</li>
+    </ul>
+    <p>The application runs on the Ethereum blockchain's Linea Sepolia test network, making it fully decentralized. MetaMask is used to interact with the blockchain, allowing for transactions like creating and liking tweets to be processed and verified.</p>
+  </div>
+
+  <div class="section" id="features">
+    <h2>Features</h2>
+    <ul>
+      <li><strong>Create Tweet</strong>: Post a tweet with a maximum of 280 characters.</li>
+      <li><strong>Like/Unlike Tweets</strong>: Like or unlike any tweet on the platform.</li>
+      <li><strong>View Tweets</strong>: View all tweets of a user, sorted by timestamp.</li>
+      <li><strong>Transaction Confirmation</strong>: All interactions like creating or liking a tweet trigger MetaMask transaction prompts.</li>
+    </ul>
+  </div>
+
+  <div class="section" id="tech-stack">
+    <h2>Tech Stack</h2>
+    <ul>
+      <li><strong>Frontend</strong>: React.js, Tailwind CSS</li>
+      <li><strong>Backend</strong>: Solidity (Smart Contracts on Ethereum)</li>
+      <li><strong>Blockchain</strong>: Linea Sepolia Test Network</li>
+      <li><strong>Web3 Integration</strong>: Web3.js</li>
+      <li><strong>Ethereum Wallet</strong>: MetaMask</li>
+    </ul>
+  </div>
+
+  <div class="section" id="smart-contract">
+    <h2>Smart Contract</h2>
+    <p>The smart contract is written in Solidity and deployed on the Linea Sepolia test network. The contract has the following key functionalities:</p>
+
+    <ul>
+      <li><code>createTweet</code>: Allows users to post a tweet.</li>
+      <li><code>likeTweet</code>: Allows users to like a specific tweet.</li>
+      <li><code>unLikeTweet</code>: Allows users to unlike a tweet.</li>
+      <li><code>getAllTweets</code>: Retrieves all tweets posted by a user.</li>
+    </ul>
+
+    <h3>Contract Structure:</h3>
+    <pre><code>struct Tweet {
+  uint id;
+  address author;
+  string content;
+  uint256 timestamp;
+  uint256 likes;
+}</code></pre>
+
+    <h3>Events:</h3>
+    <ul>
+      <li><code>createTweetEvent</code>: Emits when a new tweet is created.</li>
+      <li><code>likedTweetEvent</code>: Emits when a tweet is liked.</li>
+      <li><code>unlikedTweetEvent</code>: Emits when a tweet is unliked.</li>
+    </ul>
+  </div>
+
+  <div class="section" id="setup-instructions">
+    <h2>Setup Instructions</h2>
+
+    <h3>Prerequisites</h3>
+    <ul>
+      <li>Install <a href="https://nodejs.org/">Node.js</a></li>
+      <li>Install <a href="https://metamask.io/">MetaMask</a> and connect it to the Linea Sepolia test network.</li>
+    </ul>
+
+    <h3>Clone the Repository</h3>
+    <pre><code>git clone https://github.com/yourusername/twitter-dapp.git
+cd twitter-dapp</code></pre>
+
+    <h3>Install Dependencies</h3>
+    <pre><code>npm install</code></pre>
+
+    <h3>Start the Development Server</h3>
+    <pre><code>npm start</code></pre>
+
+    <h3>Connect MetaMask to Linea Sepolia Test Network</h3>
+    <ol>
+      <li>Open MetaMask.</li>
+      <li>Add a new network using the following details:</li>
+      <ul>
+        <li><strong>Network Name</strong>: Linea Sepolia</li>
+        <li><strong>New RPC URL</strong>: <code>https://rpc-sepolia.linea.com</code></li>
+        <li><strong>Chain ID</strong>: 1234 (for example)</li>
+        <li><strong>Currency Symbol</strong>: ETH</li>
+      </ul>
+      <li>Make sure you have test ETH in your MetaMask wallet from a faucet like <a href="https://faucet.sepolia.dev/">Sepolia Faucet</a>.</li>
+    </ol>
+  </div>
+
+  <div class="section" id="how-it-works">
+    <h2>How It Works</h2>
+
+    <h3>Creating a Tweet</h3>
+    <p>Click on the <strong>Post Tweet</strong> button to create a new tweet. A MetaMask transaction prompt will appear. Confirm the transaction. After the transaction is mined, the tweet will appear in the list of tweets.</p>
+
+    <h3>Liking a Tweet</h3>
+    <p>Click on the <strong>Like</strong> button below any tweet. Confirm the MetaMask transaction. The number of likes will update after the transaction is mined.</p>
+
+    <h3>Viewing Tweets</h3>
+    <p>Tweets are fetched from the blockchain and displayed in reverse chronological order, meaning the latest tweets appear first.</p>
+  </div>
+
+  <div class="section" id="metamask-integration">
+    <h2>MetaMask Integration</h2>
+    <p>This application integrates MetaMask to manage user accounts and interact with the blockchain. All actions, such as posting or liking a tweet, require MetaMask transaction confirmation. Ensure that you are connected to the Linea Sepolia network and have enough test ETH to cover transaction costs.</p>
+
+    <h3>MetaMask Transaction Process</h3>
+    <ol>
+      <li>After initiating a tweet creation or liking process, MetaMask will automatically pop up, asking you to confirm the transaction.</li>
+      <li>Once you confirm, the transaction will be sent to the blockchain for processing.</li>
+      <li>You will be notified when the transaction is successfully mined, and the updated data will reflect on the frontend.</li>
+    </ol>
+  </div>
+
+  <div class="section" id="screenshots">
+    <h2>Screenshots</h2>
+    <h3>Frontend</h3>
+    <img src="./public/Twiiter_forntend.png" alt="Frontend Screenshot"/>
+
+    <h3>MetaMask Transaction</h3>
+    <img src="./public/Metamask.png" alt="MetaMask Transaction">
+  </div>
+
+  <div class="section" id="license">
+    <h2>License</h2>
+    <p>This project is licensed under the MIT License.</p>
+  </div>
+
+</body>
+</html>
